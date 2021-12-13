@@ -13,8 +13,6 @@ One Raspberry Pi (server) acts as a camera and performs euclidean video magnific
 
 ### TODOs
 - [ ] separate image capture and server's frame buffer maintenance from algorithm implementation
-
-
 - [ ] add additional algorithms for
   - [ ] breathing rate detection
   - [ ] movement
