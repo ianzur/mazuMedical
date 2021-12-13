@@ -22,5 +22,5 @@ One Raspberry Pi (server) acts as a camera and performs euclidean video magnific
 - [ ] Hardware, from the ground up 
   1. [ ] move from raspberry pi to STM32 mcu (openMV -- H7)
   2. [ ] move from openMV to STM32 Nucleo/discovery board and purchased image sensor (AR0134CS) -- Image sensor I really want (OV2312).
-  3. Find manufacturer for production run.
+  3. [ ] Find manufacturer for production run.
 
