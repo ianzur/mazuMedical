@@ -4,7 +4,7 @@ Presented originally as a smart baby monitor that can estimate heart rate and re
 
 C++ & Qt application to perform eulerian video filtering (color magnification for heart rate estimation) on one Raspberry Pi and send video feed to another Pi.
 
-One Raspberry Pi (server) acts as a camera and performs euclidean video magnification to estimate heart rate. The results are sent (stream controlled tcp) to the other Raspberry Pi (client) which displays the video along with the heart rate estimation. 
+One Raspberry Pi (server) acts as a camera and performs euclidean video magnification to estimate heart rate. The results are sent (sctp) to the other Raspberry Pi (client) which displays the video along with the heart rate estimation. 
 
 [link to poster](./resources/imgs/MazuMedicalPoster.pdf)
 

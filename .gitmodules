@@ -1,0 +1,3 @@
+[submodule "python_implementation/cringbuffer"]
+	path = python_implementation/cringbuffer
+	url = git@github.com:ctrl-labs/cringbuffer.git
