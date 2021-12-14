@@ -8,7 +8,7 @@ One Raspberry Pi (server) acts as a camera and performs euclidean video magnific
 
 [link to poster](./resources/imgs/MazuMedicalPoster.pdf)
 
-### Implementation Overview
+### Algorithm Overview
 ![Algorithm overview](./resources/imgs/Poster_Camera_unit.png)
 
 ### TODOs
