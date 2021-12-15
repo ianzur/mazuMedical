@@ -10,8 +10,6 @@
 #include <iostream>
 #include <iomanip>
 
-using namespace cv;
-
 ProcessorThread::ProcessorThread(QObject *parent) : QThread(parent)
 {
 
@@ -133,7 +131,7 @@ void ProcessorThread::createIdealBandpassFilter(cv::Mat &mask, float lo, float h
         }
 
        //mask will remain the same for ever row (based on fps) -> copy r many times down
-       repeat(rowMask, mask.rows, 1, mask);
+       cv::repeat(rowMask, mask.rows, 1, mask);
 
 
     //qDebug() << "Bandpass FINISH!!";
@@ -279,11 +277,11 @@ void ProcessorThread::run()
 {
     emit outINFO(std::string("Processor Start"));
 
-    VideoCapture c(0);
+    cv::VideoCapture c(0);
 
-    c.set(CAP_PROP_FRAME_WIDTH, 480);
-    c.set(CAP_PROP_FRAME_HEIGHT, 360);
-    c.set(CAP_PROP_FPS, 25);
+    c.set(cv::CAP_PROP_FRAME_WIDTH, 480);
+    c.set(cv::CAP_PROP_FRAME_HEIGHT, 360);
+    c.set(cv::CAP_PROP_FPS, 25);
 
     //iterator
     int i = 0;
@@ -307,7 +305,7 @@ void ProcessorThread::run()
      * Round up, same as downsample function.
      */
 
-     int oneDemensionH = ceil((c.get(CAP_PROP_FRAME_HEIGHT)/(pow(2,lvls)))*(ceil((c.get(CAP_PROP_FRAME_WIDTH)/(pow(2, lvls))))));
+     int oneDemensionH = ceil((c.get(cv::CAP_PROP_FRAME_HEIGHT)/(pow(2,lvls)))*(ceil((c.get(cv::CAP_PROP_FRAME_WIDTH)/(pow(2, lvls))))));
 
      cv::Mat histMat(oneDemensionH,length,CV_32FC3);
 
