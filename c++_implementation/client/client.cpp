@@ -29,7 +29,7 @@ Client::Client(QWidget *parent)
     //host address
     QLabel *hostLabel = new QLabel(tr("Addr:"));
     hostLabel->setStyleSheet("font: 8pt;");
-    QRegExp rx("\\d{1,3}.\\d{1,3}.\\d{1,3}.\\d{1,3}");
+    QRegularExpression rx("\\d{1,3}.\\d{1,3}.\\d{1,3}.\\d{1,3}");
     hostComboBox = new QComboBox;
     hostComboBox->setEditable(true);
     hostComboBox->addItem("192.168.1.10");

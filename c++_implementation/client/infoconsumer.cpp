@@ -46,14 +46,14 @@ void InfoConsumer::readDatagram(const QByteArray &ba)
     qDebug() << s;
 
 
-    if(s.contains(QRegExp("alarm", Qt::CaseInsensitive)))
+    if(s.contains(QRegularExpression("alarm", QRegularExpression::CaseInsensitiveOption)))
     {
 //        system("mpg123 angryCows.mp3 &");
 //        system("./alarm &");
 
         silenceButton->setText("Silence Alarm");
     }
-    else if(s.contains(QRegExp("silence", Qt::CaseInsensitive)))
+    else if(s.contains(QRegularExpression("silence", QRegularExpression::CaseInsensitiveOption)))
     {
 //        system("killall -q mpg123");
 //        system("killall alarm");

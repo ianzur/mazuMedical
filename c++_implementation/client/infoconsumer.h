@@ -3,6 +3,8 @@
 
 #include "consumer.h"
 
+#include <QRegularExpression>
+
 QT_BEGIN_NAMESPACE
 class QLabel;
 class QPushButton;

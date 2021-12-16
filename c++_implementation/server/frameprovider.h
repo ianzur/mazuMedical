@@ -3,6 +3,7 @@
 
 #include <QDebug>
 #include <QDataStream>
+#include <QIODevice>
 
 #include "provider.h"
 

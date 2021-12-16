@@ -260,7 +260,7 @@ void ProcessorThread::detectFace(cv::Mat image)
     double max_face_size=300;
 
    // Load Face cascade (.xml file)
-   cv::CascadeClassifier face_cascade( "/usr/local/share/OpenCV/haarcascades/haarcascade_frontalface_alt2.xml" );
+   cv::CascadeClassifier face_cascade( "./haarcascade_frontalface_alt2.xml" );
 
    // Detect faces
    std::vector<cv::Rect> faces;
@@ -278,6 +278,8 @@ void ProcessorThread::run()
     emit outINFO(std::string("Processor Start"));
 
     cv::VideoCapture c(0);
+
+    qDebug() << "video capture";
 
     c.set(cv::CAP_PROP_FRAME_WIDTH, 480);
     c.set(cv::CAP_PROP_FRAME_HEIGHT, 360);

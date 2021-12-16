@@ -16,7 +16,7 @@ enum SctpChannels {
     NumberOfChannels = 4 //TODO add info channel
 };
 
-Server::Server(char* portno, QObject *parent)
+Server::Server(QString portno, QObject *parent)
     : QObject(parent)
     , providers(SctpChannels::NumberOfChannels)
 {
@@ -48,7 +48,7 @@ Server::Server(char* portno, QObject *parent)
     connect(providers[SctpChannels::INFO], &Provider::writeDatagram, this, &Server::writeDatagram);
 
 
-    if(!sctpServer->listen(QHostAddress::Any,atoi(portno)))
+    if(!sctpServer->listen(QHostAddress::Any,portno.toInt()))
     {
         qDebug() << "ERROR: " << sctpServer->serverError();
     }

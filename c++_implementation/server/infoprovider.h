@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QDebug>
+#include <QRegularExpression>
 
 #include "provider.h"
 

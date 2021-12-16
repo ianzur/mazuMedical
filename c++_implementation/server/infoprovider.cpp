@@ -12,8 +12,8 @@ void INFOProvider::strReady(std::string s)
 
     if(std::regex_search(s, e))
     {
-        system("mpg123 angryCows.mp3 &");
-        system("./alarm &");
+//        system("mpg123 angryCows.mp3 &");
+//        system("./alarm &");
     }
 
     QByteArray buf = QByteArray::fromStdString(s);
@@ -27,18 +27,20 @@ void INFOProvider::readDatagram(QSctpSocket &from, const QByteArray &ba)
 
 //    qDebug() << s;
 
-    if(s.contains(QRegExp("alarm", Qt::CaseInsensitive)))
+    if(s.contains(QRegularExpression("alarm", QRegularExpression::CaseInsensitiveOption)))
     {
 //        qDebug() << s;
 
+        // used to play alarm on Rpi device
 //        system("mpg123 angryCows.mp3 &");
 //        system("./alarm &");
         emit writeDatagram(0, QString(tr("alarm")).toUtf8());
     }
-    else if(s.contains(QRegExp("silence", Qt::CaseInsensitive)))
+    else if(s.contains(QRegularExpression("silence", QRegularExpression::CaseInsensitiveOption)))
     {
 //        qDebug() << s;
 
+        // kill alarm on Rpi
 //        system("killall -q mpg123");
 //        system("killall alarm");
 //        system("./aK");

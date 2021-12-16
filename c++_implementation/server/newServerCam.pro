@@ -1,5 +1,6 @@
 QT += gui
 QT += network
+QT += core
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
@@ -40,3 +41,6 @@ LIBS += -lopencv_core -lopencv_videoio -lopencv_objdetect -lopencv_imgproc -lope
 
 INCLUDEPATH += /usr/include/opencv4/
 DEPENDPATH +=  /usr/include/opencv4/
+
+DISTFILES += \
+    haarcascade_frontalface_alt2.xml

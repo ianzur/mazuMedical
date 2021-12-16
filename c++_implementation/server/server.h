@@ -20,7 +20,7 @@ class Server : public QObject
 {
     Q_OBJECT
 public:
-    explicit Server(char* portno, QObject *parent = nullptr);
+    explicit Server(QString portno, QObject *parent = nullptr);
     virtual ~Server();
 
 signals:

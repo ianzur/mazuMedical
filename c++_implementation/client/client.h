@@ -6,6 +6,7 @@
 #include <QDialog>
 #include <QVector>
 #include <QSctpSocket>
+#include <QRegularExpression>
 
 QT_BEGIN_NAMESPACE
 class QComboBox;
