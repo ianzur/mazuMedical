@@ -16,13 +16,20 @@ One Raspberry Pi (server) acts as a camera and performs euclidean video magnific
 ![Algorithm overview](./resources/imgs/Poster_Camera_unit.png)
 
 ### TODOs
+- [ ] PySide implementation? 
+  - Pros:
+    - ring buffer already verified 
+    - I am more comfortable with python
+  - Cons: 
+    - Major refactoring
+    - QSctp[Server/Socket] class is not in pyside (try building binds from locally built Qt)
 - [ ] separate image capture and server's frame buffer maintenance from algorithm implementation
 - [ ] add additional algorithms for
-  - [ ] breathing rate detection
-  - [ ] movement
-  - [ ] ...
+  - [ ] breathing rate detection (eulerian **motion** magnification -- laplacian spatial decomposition)
+  - [ ] movement (Optical Flow)
 - [ ] Hardware, from the ground up 
   1. [ ] move from raspberry pi to STM32 mcu (openMV -- H7)
   2. [ ] move from openMV to STM32 Nucleo/discovery board and purchased image sensor (AR0134CS) -- Image sensor I really want (OV2312).
-  3. [ ] Find manufacturer for production run.
+  3. [ ] ecg and breath sensing with traditional methods (use to verify algorithm)
+  3. [ ] Find manufacturer for prototype run.
 
