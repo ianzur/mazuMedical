@@ -1,7 +1,6 @@
 """ 
 
-sub-classed ring buffer with the following changes
-
+sub-classed ring buffer with the following changes:
 1. writer may overwrite data input does not hang if readers cannot keep up
 2. "reader" pointer is ignored, always reads the n-most recent frames.
 
@@ -56,13 +55,13 @@ class OverwritingRingBuffer(RingBuffer):
 
             self.array[position.index] = data
             self.writer.increment()
-            
+
+
     def _try_read_no_lock(self, reader: Pointer,
                           length: int = 1) -> ctypes._SimpleCData:
         """Overridden function to read n-most recent frames
         
         This function is called by `try_read` which handles the lock
-        
         """        
         writer_position = self.writer.get()
         
