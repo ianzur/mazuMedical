@@ -1,8 +1,8 @@
 # mazuMedical
 
-Presented originally as a smart baby monitor that can estimate heart rate and respond to a low heart rate / no heart rate scenario to warn parents.
+Presented originally as a smart baby monitor that can estimate heart rate and respond to a low heart rate / no heart rate scenarios by providing audio, tactile(vibration), and visual stimulus to infant as well as alerting parents.
 
-C++ & Qt application to perform eulerian video filtering (color magnification for heart rate estimation) on one Raspberry Pi and send video feed to another Pi.
+C++ & Qt application to perform [euclidean video magnification](http://people.csail.mit.edu/mrub/evm/) (color magnification for heart rate estimation) on one Raspberry Pi and send video feed to another Pi.
 
 > Note: Requires [building Qt from source](https://wiki.qt.io/Building_Qt_6_from_Git) with sctp enabled (eg. `configure ... -sctp`). 
 > - Requires package(debian): `libsctp1-dev`, after configure check the `config.summary` in the build folder for `SCTP........yes`
