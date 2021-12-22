@@ -5,7 +5,7 @@ Presented originally as a smart baby monitor that can estimate heart rate and re
 C++ & Qt application to perform eulerian video filtering (color magnification for heart rate estimation) on one Raspberry Pi and send video feed to another Pi.
 
 > Note: Requires [building Qt from source](https://wiki.qt.io/Building_Qt_6_from_Git) with sctp enabled (eg. `configure ... -sctp`). 
-> - Requires package(debian): `libsctp1-dev`
+> - Requires package(debian): `libsctp1-dev`, after configure check the `config.summary` in the build folder for `SCTP........yes`
 > - SCTP ([stream controlled transmission protocol](https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol)) is not available on Windows
 
 One Raspberry Pi (server) acts as a camera and performs euclidean video magnification to estimate heart rate. The results are sent (sctp) to the other Raspberry Pi (client) which displays the video along with the heart rate estimation. 
@@ -22,7 +22,7 @@ One Raspberry Pi (server) acts as a camera and performs euclidean video magnific
     - I am more comfortable with python
   - Cons: 
     - Major refactoring
-    - QSctp[Server/Socket] class is not in pyside (try building binds from locally built Qt)
+    - generating PySide6 bindings after build Qt with sctp appear to link QSctp[Server|Socket] classes
 - [ ] separate image capture and server's frame buffer maintenance from algorithm implementation
 - [ ] add additional algorithms for
   - [ ] breathing rate detection (eulerian **motion** magnification -- laplacian spatial decomposition)
