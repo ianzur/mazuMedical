@@ -1,5 +1,7 @@
 # re-implementation 
 
+@ianzur: (Dec 2021) python implementation is a work in progress
+
 ### install
 This is also a painful install.
 
